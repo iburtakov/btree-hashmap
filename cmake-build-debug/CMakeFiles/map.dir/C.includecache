@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/a-r-t/CLionProjects/map/btree.c
+btree.h
+C:/Users/a-r-t/CLionProjects/map/btree.h
+stdio.h
+-
+
+C:/Users/a-r-t/CLionProjects/map/btree.h
+map.h
+C:/Users/a-r-t/CLionProjects/map/map.h
+
+C:/Users/a-r-t/CLionProjects/map/hashmap.c
+hashmap.h
+C:/Users/a-r-t/CLionProjects/map/hashmap.h
+stdio.h
+-
+
+C:/Users/a-r-t/CLionProjects/map/hashmap.h
+map.h
+C:/Users/a-r-t/CLionProjects/map/map.h
+
+C:/Users/a-r-t/CLionProjects/map/main.c
+stdio.h
+-
+hashmap.h
+C:/Users/a-r-t/CLionProjects/map/hashmap.h
+btree.h
+C:/Users/a-r-t/CLionProjects/map/btree.h
+
+C:/Users/a-r-t/CLionProjects/map/map.h
+stdlib.h
+-
+

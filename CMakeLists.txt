@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.15)
-project(tree_hashmap)
+cmake_minimum_required(VERSION 3.14)
+project(map C)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 99)
 
-add_executable(tree_hashmap main.c btree.c btree.h hashmap.c hashmap.h map.h)
+add_executable(map main.c hashmap.h btree.h map.h btree.c hashmap.c)

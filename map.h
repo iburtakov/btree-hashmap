@@ -2,6 +2,11 @@
 #include <stdlib.h>
 struct map
 {
-    void (*cmp)(struct map *a, struct map *b);
-    void (*destroy)(struct map *m);
+    int (*cmp)(struct map *, struct map *);
+    void (*destroy)(struct map *);
+    char *(*check_type)(struct map *);
+    struct map *(*insert)(struct map *);
+    void (*pop)(struct map *);
+
 };
+

@@ -7,6 +7,5 @@ int main()
     struct map *bt = btree_create();
     hm->destroy(hm);
     bt->destroy(bt);
-    printf("%s\n", hm->check_type(hm));
     return 0;
 }
