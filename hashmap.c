@@ -1,8 +1,8 @@
-#include "hashmap.h"
+/*#include "hashmap.h"
 #include <stdio.h>
 struct hashmap
 {
-    struct map m;
+    struct Map m;
     char *name;
 };
 
@@ -33,3 +33,4 @@ struct map * hmap_create()
     hm->m.check_type = check_type;
     return (struct map *)hm;
 }
+*/

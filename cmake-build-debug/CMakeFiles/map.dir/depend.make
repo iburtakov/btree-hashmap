@@ -6,8 +6,6 @@ CMakeFiles/map.dir/btree.c.obj: ../btree.h
 CMakeFiles/map.dir/btree.c.obj: ../map.h
 
 CMakeFiles/map.dir/hashmap.c.obj: ../hashmap.c
-CMakeFiles/map.dir/hashmap.c.obj: ../hashmap.h
-CMakeFiles/map.dir/hashmap.c.obj: ../map.h
 
 CMakeFiles/map.dir/main.c.obj: ../btree.h
 CMakeFiles/map.dir/main.c.obj: ../hashmap.h
