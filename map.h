@@ -11,6 +11,9 @@ struct _Map
     void* (*get)(struct _Map* obj, void* key);
     int   (*compare_keys)(void* key1, void* key2);
     int   (*count_value)(struct _Map* obj, void* value);
+    int   (*size)(struct _Map* obj);
+    void  (*print_key)(void* key);
+    void  (*print_value)(void* value);
 };
 typedef struct _Map Map;
 

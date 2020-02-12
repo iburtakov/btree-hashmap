@@ -44,7 +44,7 @@ int DLListInit(DLList* list, const char* name, int size)
 
     list->isSorted = 'y'; //sorted by phys adr
 
-    return OK;
+    return 0;
 }
 
 void DLListFree(DLList* list)
@@ -79,7 +79,7 @@ int DLListResize(DLList* list, const int sizeNew)
     else if (sizeNew < list->dataMax)
     {
         //printf("shrink %d -> %d\n", list->dataMax, sizeNew);
-        //DLListSort(list);
+        DLListSort(list);
 
         list->dataCur = (list->dataCur > sizeNew) ? (sizeNew - DELTA) : (list->dataCur);
         list->dataMax = sizeNew;
