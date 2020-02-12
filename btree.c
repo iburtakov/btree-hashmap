@@ -3,56 +3,151 @@
 
 struct pair
 {
-    k_type key;
-    d_type data;
+    void *key;
+    void *data;
 };
 
 struct btree
 {
-    struct map m;
+    Map m;
     char *name;
     struct pair p;
     struct btree *left;
     struct btree *right;
 };
 
-void bt_destroy(struct map * t)
+void bt_destroy(Map * t)
 {
-    struct btree bt = *(struct btree *)t;
-    printf("%s destroyed\n", bt.name);
-    free(t);
+    if (t != NULL)
+    {
+        struct btree *bt = (struct btree *)t;
+        printf("%s destroyed\n", bt->name);
+        free(bt);
+    }
 }
 
-int cmp(struct map *lhs, struct map *rhs)
+int cmp(void *lhs, void *rhs)
 {
-
+    return *(k_type*)lhs > *(k_type*)rhs;
 }
 
-char * check_type_tree(struct map *m)
-{
-    struct btree bt = *(struct btree *)m;
-    return bt.name;
-}
-
-
-struct map * add_node(struct map *m, k_type key, d_type data)
+Map * add_node(Map *m, void *key, void *data)
 {
     struct btree *bt = (struct btree *)m;
-    struct btree *node = bt;
-    if (cmp((struct map *)node->left, (struct map *)node->right)) // идем в левый
-        node = node->left;
-    else                                                          // идем в правый
-        node = node->right;
-    if (node == NULL)
+    if (bt == NULL)
     {
-        node = (struct btree *)btree_create(key, data);
-        return (struct map *)bt;
+        bt = (struct btree *)btree_create(key, data);
+        return (Map *)bt;
     }
-    node = (struct btree *)add_node((struct map *)node, key, data);
-    return (struct map *)bt;
+    else if (cmp((Map *)bt->p.key, key))
+        bt->left = (struct btree*)add_node((Map *)bt->left, key, data);
+    else
+        bt->right = (struct btree*)add_node((Map *)bt->right, key, data);
+    return (Map *)bt;
 }
 
-struct map * btree_create(k_type key, d_type data)
+void *btree_get(Map *m, void *key)
+{
+    if (m == NULL)
+        return "no such key";
+    struct btree *bt = (struct btree *)m;
+    if (*(k_type *)key == *(k_type*)bt->p.key)
+        return bt->p.data;
+    else
+    {
+        if (cmp((Map *)bt->p.key, key)) // идем в левый
+            bt = bt->left;
+        else                            // идем в правый
+            bt = bt->right;
+        return btree_get((Map *)bt, key);
+    }
+}
+
+int btree_delete(Map *m, void *key)
+{
+    if (m == NULL)
+        return -1;
+    struct btree *bt = (struct btree *)m;
+    if (*(k_type *)key == *(k_type*)bt->p.key)
+    {
+        printf("btree destroyed\n");
+        free(bt);
+        return 1;
+    }
+    if (bt->left)
+    {
+        if (*(k_type *)key == *(k_type*)bt->left->p.key)
+        {
+            struct btree *tba = bt->left;
+            if (tba->left == NULL && tba->right == NULL)
+                bt->left = NULL;
+            else if (tba->left != NULL && tba->right == NULL)
+                bt->left = tba->left;
+            else if (tba->right != NULL && tba->left == NULL)
+                bt->left = tba->right;
+            else if (tba->right != NULL && tba->left != NULL)
+            {
+                bt->left = tba->right;
+                tba->right->left->left = tba->left;
+            }
+            printf("key destroyed\n");
+            free(tba);
+            return 1;
+        }
+    }
+    if (bt->right)
+    {
+        if (*(k_type *)key == *(k_type*)bt->right->p.key)
+        {
+            struct btree *tba = bt->left;
+            if (tba->left == NULL && tba->right == NULL)
+                bt->right = NULL;
+            else if (tba->left != NULL && tba->right == NULL)
+                bt->right = tba->left;
+            else if (tba->right != NULL && tba->left == NULL)
+                bt->right = tba->right;
+            else if (tba->right != NULL && tba->left != NULL)
+            {
+                bt->right = tba->right;
+                tba->left->right->right = tba->right;
+            }
+            printf("key destroyed\n");
+            free(tba);
+            return 1;
+        }
+    }
+    else
+    {
+        if (cmp((Map *)bt->p.key, key)) // идем в левый
+            bt = bt->left;
+        else                            // идем в правый
+            bt = bt->right;
+        return btree_delete((Map *)bt, key);
+    }
+    return -1;
+}
+
+int btree_change(Map *m, void *key, void *value)
+{
+    if (m == NULL)
+        return -1;
+    struct btree *bt = (struct btree *)m;
+    if (*(k_type *)key == *(k_type*)bt->p.key)
+    {
+        bt->p.data = value;
+        return 1;
+    }
+    else
+    {
+        if (cmp((Map *)bt->p.key, key)) // идем в левый
+            bt = bt->left;
+        else                            // идем в правый
+            bt = bt->right;
+        return btree_change((Map *)bt, key, value);
+    }
+}
+
+Map * btree_create(void *key, void *data)
 {
     struct btree * bt = calloc(1, sizeof(struct btree));
     bt->name = "btree";
@@ -61,8 +156,11 @@ struct map * btree_create(k_type key, d_type data)
     bt->p.key = key;
     bt->p.data = data;
     bt->m.destroy = bt_destroy;
-    bt->m.check_type = check_type_tree;
     bt->m.insert = add_node;
-    bt->m.cmp = cmp;
-    return (struct map *)bt;
+    bt->m.compare_keys = cmp;
+    bt->m.get = btree_get;
+    bt->m.delete = btree_delete;
+    bt->m.change = btree_change;
+    bt->m.compare_keys = cmp;
+    return (Map *)bt;
 }
