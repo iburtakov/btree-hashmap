@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/map.dir/btree.c.obj"
   "CMakeFiles/map.dir/hashmap.c.obj"
+  "CMakeFiles/map.dir/list.c.obj"
   "CMakeFiles/map.dir/main.c.obj"
   "libmap.dll.a"
   "map.exe"

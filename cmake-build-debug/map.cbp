@@ -86,6 +86,12 @@
 		<Unit filename="C:/dev/IV_sem/btree-hashmap/hashmap.h">
 			<Option target="map"/>
 		</Unit>
+		<Unit filename="C:/dev/IV_sem/btree-hashmap/list.c">
+			<Option target="map"/>
+		</Unit>
+		<Unit filename="C:/dev/IV_sem/btree-hashmap/list.h">
+			<Option target="map"/>
+		</Unit>
 		<Unit filename="C:/dev/IV_sem/btree-hashmap/main.c">
 			<Option target="map"/>
 		</Unit>

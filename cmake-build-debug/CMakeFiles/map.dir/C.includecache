@@ -6,23 +6,31 @@
 
 #IncludeRegexTransform: 
 
-C:/dev/IV_sem/btree-hashmap/btree.h
-map.h
-C:/dev/IV_sem/btree-hashmap/map.h
-stdlib.h
--
-
-C:/dev/IV_sem/btree-hashmap/hashmap.h
-map.h
-C:/dev/IV_sem/btree-hashmap/map.h
-
-C:/dev/IV_sem/btree-hashmap/main.c
+C:/dev/IV_sem/btree-hashmap/list.c
 stdio.h
 -
-hashmap.h
-C:/dev/IV_sem/btree-hashmap/hashmap.h
-btree.h
-C:/dev/IV_sem/btree-hashmap/btree.h
+stdlib.h
+-
+assert.h
+-
+time.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+string.h
+-
+list.h
+C:/dev/IV_sem/btree-hashmap/list.h
+
+C:/dev/IV_sem/btree-hashmap/list.h
+map.h
+C:/dev/IV_sem/btree-hashmap/map.h
 
 C:/dev/IV_sem/btree-hashmap/map.h
 

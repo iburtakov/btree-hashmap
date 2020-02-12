@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "C:/dev/IV_sem/btree-hashmap/btree.c" "C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/btree.c.obj"
   "C:/dev/IV_sem/btree-hashmap/hashmap.c" "C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/hashmap.c.obj"
+  "C:/dev/IV_sem/btree-hashmap/list.c" "C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/list.c.obj"
   "C:/dev/IV_sem/btree-hashmap/main.c" "C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

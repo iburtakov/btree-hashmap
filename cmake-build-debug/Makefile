@@ -176,6 +176,33 @@ hashmap.c.s:
 	$(MAKE) -f CMakeFiles\map.dir\build.make CMakeFiles/map.dir/hashmap.c.s
 .PHONY : hashmap.c.s
 
+list.obj: list.c.obj
+
+.PHONY : list.obj
+
+# target to build an object file
+list.c.obj:
+	$(MAKE) -f CMakeFiles\map.dir\build.make CMakeFiles/map.dir/list.c.obj
+.PHONY : list.c.obj
+
+list.i: list.c.i
+
+.PHONY : list.i
+
+# target to preprocess a source file
+list.c.i:
+	$(MAKE) -f CMakeFiles\map.dir\build.make CMakeFiles/map.dir/list.c.i
+.PHONY : list.c.i
+
+list.s: list.c.s
+
+.PHONY : list.s
+
+# target to generate assembly for a file
+list.c.s:
+	$(MAKE) -f CMakeFiles\map.dir\build.make CMakeFiles/map.dir/list.c.s
+.PHONY : list.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -218,6 +245,9 @@ help:
 	@echo ... hashmap.obj
 	@echo ... hashmap.i
 	@echo ... hashmap.s
+	@echo ... list.obj
+	@echo ... list.i
+	@echo ... list.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

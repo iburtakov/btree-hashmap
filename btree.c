@@ -31,7 +31,7 @@ int cmp(void *lhs, void *rhs)
     return *(k_type*)lhs > *(k_type*)rhs;
 }
 
-Map * add_node(Map *m, void *key, void *data)
+Map *add_node(Map *m, void *key, void *data)
 {
     struct btree *bt = (struct btree *)m;
     if (bt == NULL)
