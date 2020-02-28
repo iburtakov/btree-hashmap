@@ -36,7 +36,7 @@ Map *add_node(Map *m, void *key, void *data)
     struct btree *bt = (struct btree *)m;
     if (bt == NULL)
     {
-        bt = (struct btree *)btree_create(key, data);
+        bt = (struct btree *)btree_createNode(key, data);
         return (Map *)bt;
     }
     else if (cmp((Map *)bt->p.key, key))
@@ -147,14 +147,12 @@ int btree_change(Map *m, void *key, void *value)
     }
 }
 
-Map * btree_create(void *key, void *data)
+Map * btree_create(cmpfn fn)
 {
     struct btree * bt = calloc(1, sizeof(struct btree));
     bt->name = "btree";
-    bt->right = NULL;
-    bt->left = NULL;
-    bt->p.key = key;
-    bt->p.data = data;
+    bt->root = NULL;
+    bt->cmp = fn;
     bt->m.destroy = bt_destroy;
     bt->m.insert = add_node;
     bt->m.compare_keys = cmp;
