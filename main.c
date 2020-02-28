@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "hashmap.h"
 #include "btree.h"
-
 int main()
 {
     int key1 = 4, value1 = 4;

@@ -1,3 +1,3 @@
-C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir
-C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/a-r-t/Documents/GitHub/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir
+C:/Users/a-r-t/Documents/GitHub/btree-hashmap/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/a-r-t/Documents/GitHub/btree-hashmap/cmake-build-debug/CMakeFiles/rebuild_cache.dir
