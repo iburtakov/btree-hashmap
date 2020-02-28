@@ -168,11 +168,11 @@ Map * btree_create(int (*cmp)(void *, void *))
     bt->name = "btree";
     bt->m.destroy = bt_destroy;
     bt->m.insert = add_btree;
-    bt->m.compare_keys = cmp;
+    bt->m.compare_keys = cmp;    ///////?????
     bt->m.get = btree_get;
     bt->m.delete = btree_delete;
     bt->m.change = btree_change;
-    bt->m.compare_keys = cmp;
+    bt->m.compare_keys = cmp;    ///////????? collision
     return (Map *)bt;
 }
 

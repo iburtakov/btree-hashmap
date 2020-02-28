@@ -6,5 +6,35 @@
 
 #IncludeRegexTransform: 
 
-C:/dev/IV_sem/btree-hashmap/hashmap.c
+C:/dev/IV_sem/btree-hashmap/btree.c
+btree.h
+C:/dev/IV_sem/btree-hashmap/btree.h
+btreep.h
+C:/dev/IV_sem/btree-hashmap/btreep.h
+stdio.h
+-
+
+C:/dev/IV_sem/btree-hashmap/btree.h
+map.h
+C:/dev/IV_sem/btree-hashmap/map.h
+
+C:/dev/IV_sem/btree-hashmap/btreep.h
+stdio.h
+-
+stdlib.h
+-
+
+C:/dev/IV_sem/btree-hashmap/hashmap.h
+map.h
+C:/dev/IV_sem/btree-hashmap/map.h
+
+C:/dev/IV_sem/btree-hashmap/main.c
+stdio.h
+-
+hashmap.h
+C:/dev/IV_sem/btree-hashmap/hashmap.h
+btree.h
+C:/dev/IV_sem/btree-hashmap/btree.h
+
+C:/dev/IV_sem/btree-hashmap/map.h
 

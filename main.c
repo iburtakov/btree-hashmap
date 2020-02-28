@@ -1,13 +1,19 @@
 #include <stdio.h>
 #include "hashmap.h"
 #include "btree.h"
+
+int cmparer(void *l, void *r)
+{
+    return *(int*)l > *(int*)r;
+}
+
 int main()
 {
     int key1 = 4, value1 = 4;
     int key2 = 3, value2 = 3;
     int key3 = 2, value3 = 2, value4 = 22;
     int key5 = 5, value5 = 5;
-    Map *bt = btree_create((void *)&key1, (void *)&value1);
+    Map *bt = btree_create(cmparer);
     bt->insert(bt, (void*)&key2, (void*)&value2);
     bt->insert(bt, (void*)&key3, (void*)&value3);
     bt->insert(bt, (void*)&key5, (void*)&value5);

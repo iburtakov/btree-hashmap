@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/map.dir/main.c.obj"
   "CMakeFiles/map.dir/btree.c.obj"
   "CMakeFiles/map.dir/hashmap.c.obj"
-  "map.pdb"
+  "CMakeFiles/map.dir/main.c.obj"
+  "libmap.dll.a"
   "map.exe"
   "map.exe.manifest"
-  "libmap.dll.a"
+  "map.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

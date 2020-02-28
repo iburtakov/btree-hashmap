@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/a-r-t/Documents/GitHub/btree-hashmap/btree.c" "C:/Users/a-r-t/Documents/GitHub/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/btree.c.obj"
-  "C:/Users/a-r-t/Documents/GitHub/btree-hashmap/hashmap.c" "C:/Users/a-r-t/Documents/GitHub/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/hashmap.c.obj"
-  "C:/Users/a-r-t/Documents/GitHub/btree-hashmap/main.c" "C:/Users/a-r-t/Documents/GitHub/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/main.c.obj"
+  "C:/dev/IV_sem/btree-hashmap/btree.c" "C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/btree.c.obj"
+  "C:/dev/IV_sem/btree-hashmap/hashmap.c" "C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/hashmap.c.obj"
+  "C:/dev/IV_sem/btree-hashmap/main.c" "C:/dev/IV_sem/btree-hashmap/cmake-build-debug/CMakeFiles/map.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
